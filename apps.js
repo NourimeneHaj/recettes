@@ -1,16 +1,31 @@
 const mongoose = require("mongoose");
+const express = require('express');
 const category = require('./models/category');
 const comment = require('./models/comment');
 const ingredient = require('./models/ingredient');
 const membre = require('./models/membre');
 const ingredientRecipe = require('./models/ingredientRecipe');
 const recipe = require('./models/recipe');
+const membreRoutes = require('./routes/membreRoutes');
 
-// connection à la base de données
-mongoose.connect('mongodb+srv://ndeyedia259:BN1cDJn7OQrCatCO@cluster0.ysmxfvy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+mongoose.connect('mongodb+srv://nouri:mongoDB0@recettes.3uirjfb.mongodb.net/?retryWrites=true&w=majority&appName=Recettes',
 { 
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
-.then(() => console.log('Connexion réussie'))
-.catch(() => console.log('Connexion échouée'))
+.then(() => {
+    console.log('Connexion réussie');
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+    });
+})
+.catch((err) => {
+    console.error('Connexion échouée:', err);
+    process.exit(1); // Sortie du processus avec un code d'échec
+});
+
+app.use(express.json());
+app.use('/members', membreRoutes);
