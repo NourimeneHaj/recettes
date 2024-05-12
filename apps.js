@@ -10,6 +10,7 @@ const membreRoutes = require('./routes/membreRoutes');
 const categoryRoutes = require('./routes/categoryRoutes');
 const commentRoutes = require('./routes/commentRoutes');
 const recipeRoutes = require('./routes/recipeRoutes');
+const ingredientRoutes = require('./routes/ingredientRoutes');
 
 
 const app = express();
@@ -36,3 +37,4 @@ app.use('/members', membreRoutes);
 app.use('/categories', categoryRoutes);
 app.use('/comments', commentRoutes);
 app.use('/recipes', recipeRoutes);
+app.use('/ingredients', ingredientRoutes);
