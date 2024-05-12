@@ -7,6 +7,9 @@ const membre = require('./models/membre');
 const ingredientRecipe = require('./models/ingredientRecipe');
 const recipe = require('./models/recipe');
 const membreRoutes = require('./routes/membreRoutes');
+const categoryRoutes = require('./routes/categoryRoutes');
+const commentRoutes = require('./routes/commentRoutes');
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -29,3 +32,5 @@ mongoose.connect('mongodb+srv://nouri:mongoDB0@recettes.3uirjfb.mongodb.net/?ret
 
 app.use(express.json());
 app.use('/members', membreRoutes);
+app.use('/categories', categoryRoutes);
+app.use('/comments', commentRoutes);

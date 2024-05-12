@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-// const membreController = require('./controller/membreController');
-const membreController = require('../controller/membreController');
+const membreController = require('../controllers/membreController');
 
 
 
