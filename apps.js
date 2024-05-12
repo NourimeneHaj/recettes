@@ -9,6 +9,7 @@ const recipe = require('./models/recipe');
 const membreRoutes = require('./routes/membreRoutes');
 const categoryRoutes = require('./routes/categoryRoutes');
 const commentRoutes = require('./routes/commentRoutes');
+const recipeRoutes = require('./routes/recipeRoutes');
 
 
 const app = express();
@@ -34,3 +35,4 @@ app.use(express.json());
 app.use('/members', membreRoutes);
 app.use('/categories', categoryRoutes);
 app.use('/comments', commentRoutes);
+app.use('/recipes', recipeRoutes);
