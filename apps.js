@@ -16,7 +16,7 @@ const ingredientRoutes = require('./routes/ingredientRoutes');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-mongoose.connect('mongodb+srv://nouri:mongoDB0@recettes.3uirjfb.mongodb.net/?retryWrites=true&w=majority&appName=Recettes',
+mongoose.connect('mongodb+srv://ndeyedia259:BN1cDJn7OQrCatCO@cluster0.ysmxfvy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
 { 
     useNewUrlParser: true,
     useUnifiedTopology: true,
